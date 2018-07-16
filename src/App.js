@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import {
   BrowserRouter as Router,
   Route,
@@ -6,6 +7,11 @@ import {
   Switch,
 } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { ThemeProvider } from 'styled-components';
+
+import whitetheme from '../config/theme/whitetheme';
+import darktheme from '../config/theme/darktheme';
+import GlobalStyles from './GlobalStyles';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -15,43 +21,73 @@ import Page404 from './pages/Page404';
 const App = ({
   themes,
   changeTheme,
-}) => (
-  <Router>
-    <div>
-      <ul>
-        <li>
-          <Link to="/">Home</Link>
-        </li>
-        <li>
-          <Link to="/about">About</Link>
-        </li>
-        <li>
-          <Link to="/topics">Topics</Link>
-        </li>
-        <li>
-          <Link to="/404">404</Link>
-        </li>
-      </ul>
+}) => {
+  let theme = {};
 
-      <hr />
+  if (themes.selected.id === 'white_theme') {
+    theme = whitetheme;
+  } else if (themes.selected.id === 'dark_theme') {
+    theme = darktheme;
+  }
 
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/topics" component={Topics} />
-        <Route component={Page404} />
-      </Switch>
+  return (
+    <ThemeProvider theme={theme}>
+      <div>
+        <GlobalStyles theme={theme} />
+        <Router>
+          <div>
+            <ul>
+              <li>
+                <Link to="/">Home</Link>
+              </li>
+              <li>
+                <Link to="/about">About</Link>
+              </li>
+              <li>
+                <Link to="/topics">Topics</Link>
+              </li>
+              <li>
+                <Link to="/404">404</Link>
+              </li>
+            </ul>
 
-      <hr />
+            <hr />
 
-      <ul>
-        {
-          themes.data.map(({ id, name }) => <button onClick={() => changeTheme(id)}>{ name }</button>)
-        }
-      </ul>
-    </div>
-  </Router>
-);
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route path="/about" component={About} />
+              <Route path="/topics" component={Topics} />
+              <Route component={Page404} />
+            </Switch>
+
+            <hr />
+
+            <ul>
+              {
+                themes.data.map(({ id, name }) => (
+                  <li key={id}>
+                    <button onClick={() => changeTheme(id)}>{name}</button>
+                  </li>
+                ))
+              }
+            </ul>
+          </div>
+        </Router>
+      </div>
+    </ThemeProvider>
+  );
+};
+
+App.propTypes = {
+  themes: PropTypes.object.isRequired,
+  changeTheme: PropTypes.func.isRequired,
+};
+App.displayName = App;
+
+/**
+ * Wrap App with redux to access
+ * and update the theme
+ */
 
 const mapState = state => ({
   themes: state.themes,
