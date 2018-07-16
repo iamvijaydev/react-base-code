@@ -1,0 +1,13 @@
+/node_modules/
+coverage.data
+coverage
+dist
+
+*.log
+.vscode
+.chrome
+.DS_Store
+
+env.js
+config/locale/*.json
+
