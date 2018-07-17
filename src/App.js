@@ -127,7 +127,7 @@ class App extends React.Component {
 
               <hr />
 
-              <h3>Images from simply from: <code>~./assets/[image]</code></h3>
+              <h3>Images referenced from: <code>~./assets/[image]</code></h3>
               <img src="/assets/social-sprite.png" alt="social icon sprites" />
             </div>
           </Router>
