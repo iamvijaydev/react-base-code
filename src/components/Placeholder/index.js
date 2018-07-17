@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Styled from './styled';
 
-export const Placeholder = ({
+const Placeholder = ({
   inline,
   status,
   message,
@@ -42,3 +42,5 @@ Placeholder.propTypes = {
   message: PropTypes.string.isRequired,
   actions: PropTypes.arrayOf(PropTypes.element),
 };
+
+export { Placeholder as default };
