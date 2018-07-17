@@ -10,6 +10,7 @@ An opinionated base tech stack for a modern React app.
 - **react-router-dom:** The routing library
 - **react-loadable:** The lazy loading library
 - **axios:** The XHR library
+- **Jest & Enzyme:** The testing libraries
 
 ## Code structure
 - **/build:** Build related details of Webpack and Jest
