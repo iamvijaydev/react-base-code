@@ -6,6 +6,7 @@
   "license": "MIT",
   "private": true,
   "scripts": {
+    "setup": "npm install",
     "test": "jest --colors",
     "test:u": "echo \"updating snapshots...\" && jest -u --colors",
     "dist": "webpack -p --env.env=prod",
