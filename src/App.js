@@ -11,7 +11,7 @@ import { ThemeProvider } from 'styled-components';
 
 import whitetheme from '../config/theme/whitetheme';
 import darktheme from '../config/theme/darktheme';
-import GlobalStyles from './GlobalStyles';
+import GlobalStyles from './components/GlobalStyles';
 
 import Home from './pages/Home';
 import About from './pages/About';
@@ -35,6 +35,9 @@ const App = ({
       <div>
         <GlobalStyles theme={theme} />
         <Router>
+          {/*
+            Please update the code as your project requirements
+          */}
           <div>
             <ul>
               <li>
@@ -62,11 +65,17 @@ const App = ({
 
             <hr />
 
+            <h3>Theme</h3>
             <ul>
               {
                 themes.data.map(({ id, name }) => (
                   <li key={id}>
-                    <button onClick={() => changeTheme(id)}>{name}</button>
+                    <button
+                      disabled={id === themes.selected.id}
+                      onClick={() => changeTheme(id)}
+                    >
+                      {name}
+                    </button>
                   </li>
                 ))
               }

@@ -29,6 +29,11 @@ const darktheme = {
   notifColor: colors.green,
   neutralColor: colors.gray200,
 
+  /* link colors */
+  linkColor: colors.red,
+  linkActiveColor: colors.yellow,
+  linkVisitedColor: colors.green,
+
   /* theme specific fonts */
   primaryFont: fonts.sans,
   secondaryFont: fonts.serif,
