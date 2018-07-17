@@ -1,7 +1,7 @@
 React base code
 ===============
 
-An opinionated base tech stack for a modern React app.
+An opinionated and scalable base tech stack for a modern React app.
 
 ## Tech Stack
 - **react:** The main UI library
@@ -41,7 +41,7 @@ npm start
 
 ## Build dist
 ```shell
-npm run build
+npm run dist
 ```
 
 ## Unit test
