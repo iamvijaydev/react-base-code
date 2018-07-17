@@ -3,6 +3,8 @@ React base code
 
 An opinionated and scalable base tech stack for a modern React app.
 
+[![Build Status](https://travis-ci.org/iamvijaydev/react-base-code.svg?branch=master)](https://travis-ci.org/iamvijaydev/react-base-code)
+
 ## Tech Stack
 - **react:** The main UI library
 - **redux:** The main state management library

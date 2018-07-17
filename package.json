@@ -1,10 +1,13 @@
 {
-  "name": "fluidex",
+  "name": "react-base-code",
   "version": "0.1.0",
   "main": "index.js",
-  "author": "Consensys",
+  "author": "Vijay Dev <vijaydev.in@gmail.com> (http://vijaydev.com/)",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamvijaydev/react-base-code.git"
+  },
   "license": "MIT",
-  "private": true,
   "scripts": {
     "setup": "npm install",
     "test": "jest --colors",
