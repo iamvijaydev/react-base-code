@@ -1,12 +1,10 @@
-const session = {
-  uid: 10001,
-  name: 'user',
-};
-
 export default (state = {}, action) => {
   switch (action.type) {
     case 'FILL':
-      return { ...session };
+      return {
+        uid: 10001,
+        name: 'user',
+      };
 
     default:
       return state;

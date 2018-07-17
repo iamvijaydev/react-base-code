@@ -6,7 +6,7 @@ const data = [{
   name: 'Dark',
 }];
 const selected = data[0];
-const initalState = {
+export const initalState = {
   data,
   selected,
 };

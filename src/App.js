@@ -35,9 +35,7 @@ const App = ({
       <div>
         <GlobalStyles theme={theme} />
         <Router>
-          {/*
-            Please update the code as your project requirements
-          */}
+          {/* Please update the code below for your project requirements */}
           <div>
             <ul>
               <li>
@@ -50,7 +48,7 @@ const App = ({
                 <Link to="/topics">Topics</Link>
               </li>
               <li>
-                <Link to="/404">404</Link>
+                <Link to="/link-does-not-exist">404</Link>
               </li>
             </ul>
 
@@ -80,6 +78,11 @@ const App = ({
                 ))
               }
             </ul>
+
+            <hr />
+
+            <h3>Images from simply from: <code>~./assets/[image]</code></h3>
+            <img src="/assets/social-sprite.png" alt="social icon sprites" />
           </div>
         </Router>
       </div>
