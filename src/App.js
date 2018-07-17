@@ -8,7 +8,6 @@ import {
 } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
-import { CSSTransition } from 'react-transition-group';
 
 import whitetheme from '../config/theme/whitetheme';
 import darktheme from '../config/theme/darktheme';
