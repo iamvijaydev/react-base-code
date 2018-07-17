@@ -1,0 +1,73 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GlobalStyles /> component snapshot ok 1`] = `
+ShallowWrapper {
+  "length": 1,
+  Symbol(enzyme.__root__): [Circular],
+  Symbol(enzyme.__unrendered__): <GlobalStyles
+    theme={
+      Object {
+        "alternativeColor": "#f05323",
+        "alternativeFont": "'Roboto Mono', monospace",
+        "backgroudColor": "#fff",
+        "bold": 700,
+        "colors": Object {
+          "black": "#000",
+          "gray100": "#eee",
+          "gray200": "#aaa",
+          "gray300": "#555",
+          "gray400": "#111",
+          "green": "#36ba4e",
+          "red": "#f05323",
+          "white": "#fff",
+          "yellow": "#ffbf00",
+        },
+        "errorColor": "#f05323",
+        "light": 100,
+        "linkActiveColor": "#ffbf00",
+        "linkColor": "#f05323",
+        "linkVisitedColor": "#36ba4e",
+        "media": Object {
+          "desktop": "@media only screen and (min-width: 992px)",
+          "tablet": "@media only screen and (min-width: 768px)",
+          "tabletOnly": "@media only screen and (min-width: 768px) and (max-width: 991px)",
+        },
+        "medium": 400,
+        "neutralColor": "#aaa",
+        "notifColor": "#36ba4e",
+        "primaryColor": "#36ba4e",
+        "primaryFont": "'Open Sans', sans-serif",
+        "secondaryColor": "#ffbf00",
+        "secondaryFont": "'Slabo 27px', serif",
+        "successColor": "#36ba4e",
+        "textColor": "#111",
+        "zindex": Object {
+          "dropdown": 96,
+          "modal": 98,
+          "modalx": 99,
+          "notif": 95,
+          "tooltip": 97,
+        },
+      }
+    }
+  />,
+  Symbol(enzyme.__renderer__): Object {
+    "batchedUpdates": [Function],
+    "getNode": [Function],
+    "render": [Function],
+    "simulateEvent": [Function],
+    "unmount": [Function],
+  },
+  Symbol(enzyme.__node__): null,
+  Symbol(enzyme.__nodes__): Array [
+    null,
+  ],
+  Symbol(enzyme.__options__): Object {
+    "adapter": ReactSixteenAdapter {
+      "options": Object {
+        "enableComponentDidUpdateOnSetState": true,
+      },
+    },
+  },
+}
+`;

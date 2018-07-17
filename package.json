@@ -6,7 +6,8 @@
   "license": "MIT",
   "private": true,
   "scripts": {
-    "test": "jest",
+    "test": "jest --colors",
+    "test:u": "echo \"updating snapshots...\" && jest -u --colors",
     "dist": "webpack -p --env.env=prod",
     "start": "webpack-dev-server --env.env=dev"
   },
@@ -62,7 +63,7 @@
   },
   "jest": {
     "verbose": true,
-    "collectCoverage": true,
+    "collectCoverage": false,
     "collectCoverageFrom": [
       "**/*.js",
       "!webpack.config.js",

@@ -9,7 +9,6 @@ const ComponentLoading = ({
   timedOut,
   pastDelay,
 }) => {
-  return <Styled>Loading</Styled>;
   if (error) {
     return (
       <Styled>
@@ -37,7 +36,7 @@ ComponentLoading.displayName = 'ComponentLoading';
 ComponentLoading.defaultProps = {
   error: false,
   timedOut: false,
-  pastDelay: true,
+  pastDelay: false,
 };
 ComponentLoading.propTypes = {
   error: PropTypes.any,
