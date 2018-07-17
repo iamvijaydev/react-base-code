@@ -1,9 +1,9 @@
 React base code
 ===============
 
-An opiniated base tech stack for a morden React app.
+An opinionated base tech stack for a modern React app.
 
-## Tech stack
+## Tech Stack
 - **react:** The main UI library
 - **redux:** The main state management library
 - **styled-components:** The styling and theming library
@@ -31,7 +31,7 @@ npm install
 ```
 
 ## Create env.js from env.example.js
-This file `env.js` contains any environment related contents. Update then as you see fit. Add more if required.
+This file `env.js` contains any environment-related contents. Update then as you see fit. Add more if required.
 
 ## Start dev server
 ```shell
