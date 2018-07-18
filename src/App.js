@@ -13,6 +13,7 @@ import intl from 'react-intl-universal';
 import whitetheme from '../config/theme/whitetheme';
 import darktheme from '../config/theme/darktheme';
 import GlobalStyles from './components/GlobalStyles';
+import ScrollToTop from './components/ScrollToTop';
 import Modal from './components/Modal';
 
 import Home from './pages/Home';
@@ -43,12 +44,6 @@ class App extends React.Component {
 
   componentDidMount() {
     this.loadLocale();
-  }
-
-  componentDidUpdate(prevProps) {
-    if (this.props.location !== prevProps.location) {
-      window.scrollTo(0, 0);
-    }
   }
 
   onModalClose = () => this.setState({ showModal: false });
@@ -118,6 +113,8 @@ class App extends React.Component {
       <ThemeProvider theme={theme}>
         <div>
           <GlobalStyles theme={theme} />
+          <ScrollToTop />
+
           <Router>
             {/* Please update the code below for your project requirements */}
             <div>
@@ -135,8 +132,6 @@ class App extends React.Component {
                   <Link to="/link-does-not-exist">404</Link>
                 </li>
               </ul>
-
-              <hr />
 
               <Switch>
                 <Route exact path="/" component={Home} />
@@ -209,7 +204,6 @@ App.propTypes = {
   locale: PropTypes.object.isRequired,
   changeTheme: PropTypes.func.isRequired,
   changeLocale: PropTypes.func.isRequired,
-  location: PropTypes.object.isRequired,
 };
 
 /**
