@@ -12,11 +12,12 @@ An opinionated and scalable base tech stack for a modern React app.
 - **react-router-dom:** The routing library
 - **react-loadable:** The lazy loading library
 - **axios:** The XHR library
-- **Jest & Enzyme:** The testing libraries
+- **react-intl-universal:** The XHR library
+- **jest & enzyme:** The testing libraries
 
 ## Code structure
 - **/build:** Build related details of Webpack and Jest
-- **/config:** Whitewashing related details and assets
+- **/config:** Whitewashing and language related details and assets
 - **/src/components:** Shareable components that never connects to redux store
 - **/src/pages:** Individual route pages
 - **/src/services:** Wrapped services for the App, e.g: fetch, validation. Available as an API, so the actual implementation can change
@@ -25,8 +26,8 @@ An opinionated and scalable base tech stack for a modern React app.
 
 ## Get the code
 - *clone:* the repository via `git clone git@github.com:iamvijaydev/react-base-code.git` (You will have to change the remote)
-- *zip:* [v1.0.0.zip](https://github.com/iamvijaydev/react-base-code/archive/v1.0.0.zip)
-- *tar.gz:* [v1.0.0.tar.gz](https://github.com/iamvijaydev/react-base-code/archive/v1.0.0.tar.gz)
+- *zip:* [v1.1.0.zip](https://github.com/iamvijaydev/react-base-code/archive/v1.1.0.zip)
+- *tar.gz:* [v1.1.0.tar.gz](https://github.com/iamvijaydev/react-base-code/archive/v1.1.0.tar.gz)
 
 ## Install packages
 ```shell
@@ -55,3 +56,6 @@ npm test
 ```shell
 npm run test:u
 ```
+
+## Intl
+All the language translations are added to `/config/locale/<locale code>/<fragments>.json`. During both dev and prod build, an additional script is run to aggregate all the fragments to a single file at `/config/locale/<locale code>.json`. Meaning, you can create as many fragments as you like. Make sure to apply any modifications or additions are applied on all locale folders. Since aggregation is a separate script, you need to restart the dev server to apply the new changes.
