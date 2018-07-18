@@ -1,0 +1,5 @@
+{
+  "comp/fail_load_page": "Failed to load page! Try refreshing.",
+  "comp/still_load_page": "Still loading the page...",
+  "comp/load_page": "Loading the page..."
+}

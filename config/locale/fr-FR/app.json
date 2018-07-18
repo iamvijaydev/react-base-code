@@ -1,0 +1,12 @@
+{
+  "app/modal_header": "En-tête modal",
+  "app/modal_text_line_1": "Ceci est un exemple d'un modal!",
+  "app/modal_text_line_2": "<code>Esc</code> fonctionne aussi, si onClose est passé ;)",
+  "app/modal_heading": "Exemple modal (via React Portal)",
+  "app/open_modal": "Ouvrir modal",
+  "app/switch_theme": "Changer de thème",
+  "app/switch_language": "Changer de langue",
+  "app/images_ref": "Images référencées depuis:",
+  "app/select_topic": "Veuillez sélectionner un sujet",
+  "app/no_match": "Aucune correspondance pour"
+}

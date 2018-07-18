@@ -1,0 +1,12 @@
+{
+  "app/modal_header": "モーダルヘッダ",
+  "app/modal_text_line_1": "これはモーダルの例です！",
+  "app/modal_text_line_2": "<code>Esc</code> \"onClose\" が渡された場合でも動作します ;)",
+  "app/modal_heading": "モーダルの例（React Portal経由）",
+  "app/open_modal": "オープンモーダル",
+  "app/switch_theme": "スイッチテーマ",
+  "app/switch_language": "スイッチ言語",
+  "app/images_ref": "から参照される画像：",
+  "app/select_topic": "トピックを選択してください。",
+  "app/no_match": "一致するものはありません"
+}
