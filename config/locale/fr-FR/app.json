@@ -7,5 +7,6 @@
   "app/switch_theme": "Changer de thème",
   "app/switch_language": "Changer de langue",
   "app/images_ref": "Images référencées depuis:",
-  "app/select_topic": "Veuillez sélectionner un sujet"
+  "app/select_topic": "Veuillez sélectionner un sujet",
+  "app/no_match": "Aucune correspondance pour"
 }

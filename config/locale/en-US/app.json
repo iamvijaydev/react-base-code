@@ -7,5 +7,6 @@
   "app/switch_theme": "Switch Theme",
   "app/switch_language": "Switch Language",
   "app/images_ref": "Images referenced from:",
-  "app/select_topic": "Please select a topic."
+  "app/select_topic": "Please select a topic.",
+  "app/no_match": "No match for"
 }

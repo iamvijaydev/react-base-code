@@ -41,6 +41,16 @@ class App extends React.Component {
     };
   }
 
+  componentDidMount() {
+    this.loadLocale();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.location !== prevProps.location) {
+      window.scrollTo(0, 0);
+    }
+  }
+
   onModalClose = () => this.setState({ showModal: false });
 
   renderModal = () => (
@@ -62,9 +72,44 @@ class App extends React.Component {
     ) : null
   );
 
+  loadLocale = (locale) => {
+    const hasLocale = check => this.props.locale.data.find(({ id }) => id === check);
+
+    let currentLocale;
+
+    if (!!locale && !hasLocale(locale)) {
+      return;
+    } else if (!!locale && hasLocale(locale)) {
+      currentLocale = locale;
+    } else {
+      currentLocale = intl.determineLocale({
+        cookieLocaleKey: 'lang',
+      });
+
+      if (!hasLocale(currentLocale)) {
+        currentLocale = 'en-US';
+      }
+    }
+
+    import(`../config/locale/${currentLocale}.json`)
+      .then(res => intl.init({
+        currentLocale,
+        locales: {
+          [currentLocale]: res,
+        },
+      }))
+      .then(() => {
+        this.props.changeLocale(currentLocale);
+      })
+      .catch(() => {
+        this.props.changeLocale(currentLocale);
+      });
+  }
+
   render() {
     const {
       themes,
+      locale,
       changeTheme,
     } = this.props;
     const theme = App.loadTheme(themes);
@@ -108,12 +153,12 @@ class App extends React.Component {
                 disabled={this.state.showModal}
                 onClick={() => this.setState({ showModal: true })}
               >
-                {intl.get('menu/open_modal').d('Open modal')}
+                {intl.get('app/open_modal').d('Open modal')}
               </button>
 
               <hr />
 
-              <h3>{intl.get('menu/switch_theme').d('Switch Theme')}</h3>
+              <h3>{intl.get('app/switch_theme').d('Switch Theme')}</h3>
               <ul>
                 {
                   themes.data.map(({ id, name }) => (
@@ -131,14 +176,14 @@ class App extends React.Component {
 
               <hr />
 
-              <h3>{intl.get('menu/switch_language').d('Switch Language')}</h3>
+              <h3>{intl.get('app/switch_language').d('Switch Language')}</h3>
               <ul>
                 {
-                  themes.data.map(({ id, name }) => (
+                  locale.data.map(({ id, name }) => (
                     <li key={id}>
                       <button
-                        disabled={id === themes.selected.id}
-                        onClick={() => changeTheme(id)}
+                        disabled={id === locale.selected.id}
+                        onClick={() => this.loadLocale(id)}
                       >
                         {name}
                       </button>
@@ -149,7 +194,7 @@ class App extends React.Component {
 
               <hr />
 
-              <h3>{intl.get('menu/images_ref').d('Images referenced from:')} <code>~./assets/[image]</code></h3>
+              <h3>{intl.get('app/images_ref').d('Images referenced from:')} <code>~./assets/[image]</code></h3>
               <img src="/assets/social-sprite.png" alt="social icon sprites" />
             </div>
           </Router>
@@ -161,7 +206,10 @@ class App extends React.Component {
 
 App.propTypes = {
   themes: PropTypes.object.isRequired,
+  locale: PropTypes.object.isRequired,
   changeTheme: PropTypes.func.isRequired,
+  changeLocale: PropTypes.func.isRequired,
+  location: PropTypes.object.isRequired,
 };
 
 /**
@@ -171,11 +219,16 @@ App.propTypes = {
 
 const mapState = state => ({
   themes: state.themes,
+  locale: state.locale,
 });
 
 const mapDispatch = dispatch => ({
   changeTheme: id => dispatch({
     type: 'CHANGE_THEME',
+    id,
+  }),
+  changeLocale: id => dispatch({
+    type: 'CHANGE_LOCALE',
     id,
   }),
 });

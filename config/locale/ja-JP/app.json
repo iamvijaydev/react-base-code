@@ -7,5 +7,6 @@
   "app/switch_theme": "スイッチテーマ",
   "app/switch_language": "スイッチ言語",
   "app/images_ref": "から参照される画像：",
-  "app/select_topic": "トピックを選択してください。"
+  "app/select_topic": "トピックを選択してください。",
+  "app/no_match": "一致するものはありません"
 }
