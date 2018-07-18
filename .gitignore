@@ -2,6 +2,7 @@
 coverage.data
 coverage
 dist
+config/locale/*.json
 
 *.log
 .vscode

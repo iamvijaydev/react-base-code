@@ -1,0 +1,5 @@
+{
+  "comp/fail_load_page": "Impossible de charger la page! Essayez rafraîchissant.",
+  "comp/still_load_page": "Toujours en train de charger la page ...",
+  "comp/load_page": "Chargement de la page ..."
+}

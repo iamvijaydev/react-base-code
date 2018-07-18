@@ -1,0 +1,5 @@
+{
+  "comp/fail_load_page": "ページを読み込めませんでした！ リフレッシュしてみてください。",
+  "comp/still_load_page": "まだページを読み込んでいます...",
+  "comp/load_page": "ページの読み込み中..."
+}

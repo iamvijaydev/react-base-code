@@ -8,6 +8,7 @@ import {
 } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
+import intl from 'react-intl-universal';
 
 import whitetheme from '../config/theme/whitetheme';
 import darktheme from '../config/theme/darktheme';
@@ -46,14 +47,16 @@ class App extends React.Component {
     this.state.showModal ? (
       <Modal onClose={this.onModalClose}>
         <div>
-          <header><h2>Modal header</h2></header>
+          <header><h2>{intl.get('app/modal_header').d('Modal header')}</h2></header>
           <hr />
           <article>
-            <p>This is an example of a modal!</p>
-            <p><code>Esc</code> works too, if onClose is passed ;)</p>
+            <p>{intl.get('app/modal_text_line_1').d('This is an example of a modal!')}</p>
+            <p>{intl.getHTML('app/modal_text_line_2').d('<code>Esc</code> works too, if onClose is passed ;)')}</p>
           </article>
           <hr />
-          <footer><button onClick={this.onModalClose}>Close</button></footer>
+          <footer>
+            <button onClick={this.onModalClose}>{intl.get('common/close').d('Close')}</button>
+          </footer>
         </div>
       </Modal>
     ) : null
@@ -75,13 +78,13 @@ class App extends React.Component {
             <div>
               <ul>
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link to="/">{intl.get('menu/home').d('Home')}</Link>
                 </li>
                 <li>
-                  <Link to="/about">About</Link>
+                  <Link to="/about">{intl.get('menu/about').d('About')}</Link>
                 </li>
                 <li>
-                  <Link to="/topics">Topics</Link>
+                  <Link to="/topics">{intl.get('menu/topics').d('Topics')}</Link>
                 </li>
                 <li>
                   <Link to="/link-does-not-exist">404</Link>
@@ -99,16 +102,18 @@ class App extends React.Component {
 
               <hr />
 
-              <h3>Modal example (React Portal)</h3>
+              <h3>{intl.get('app/modal_heading').d('Modal example (via React Portal)')}</h3>
               {this.renderModal()}
               <button
                 disabled={this.state.showModal}
                 onClick={() => this.setState({ showModal: true })}
               >
-                Open modal
+                {intl.get('menu/open_modal').d('Open modal')}
               </button>
 
-              <h3>Theme</h3>
+              <hr />
+
+              <h3>{intl.get('menu/switch_theme').d('Switch Theme')}</h3>
               <ul>
                 {
                   themes.data.map(({ id, name }) => (
@@ -126,7 +131,25 @@ class App extends React.Component {
 
               <hr />
 
-              <h3>Images referenced from: <code>~./assets/[image]</code></h3>
+              <h3>{intl.get('menu/switch_language').d('Switch Language')}</h3>
+              <ul>
+                {
+                  themes.data.map(({ id, name }) => (
+                    <li key={id}>
+                      <button
+                        disabled={id === themes.selected.id}
+                        onClick={() => changeTheme(id)}
+                      >
+                        {name}
+                      </button>
+                    </li>
+                  ))
+                }
+              </ul>
+
+              <hr />
+
+              <h3>{intl.get('menu/images_ref').d('Images referenced from:')} <code>~./assets/[image]</code></h3>
               <img src="/assets/social-sprite.png" alt="social icon sprites" />
             </div>
           </Router>

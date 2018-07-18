@@ -1,9 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import intl from 'react-intl-universal';
 
 const AboutComp = ({ about }) => (
   <div>
-    <h2>About</h2>
+    <h2>{intl.get('menu/about').d('About')}</h2>
     <p>{about}</p>
   </div>
 );

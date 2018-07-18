@@ -1,12 +1,12 @@
 const topics = [{
   id: 'rendering',
-  topic: 'Rendering with React',
+  topic: 'Rendering with React (Lang: This should be translated from API)',
 }, {
   id: 'components',
-  topic: 'Understanding components',
+  topic: 'Understanding components (Lang: This should be translated from API)',
 }, {
   id: 'props-v-state',
-  topic: 'Props v. State',
+  topic: 'Props v. State (Lang: This should be translated from API)',
 }];
 
 export default (state = topics, action) => {

@@ -1,4 +1,4 @@
-const msg = 'I\'m a react shell code.';
+const msg = 'I\'m a react shell code. (Lang: This should be translated from API)';
 
 export default (state = msg, action) => {
   switch (action.type) {
