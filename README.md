@@ -26,8 +26,8 @@ An opinionated and scalable base tech stack for a modern React app.
 
 ## Get the code
 - *clone:* the repository via `git clone git@github.com:iamvijaydev/react-base-code.git` (You will have to change the remote)
-- *zip:* [v1.1.1.zip](https://github.com/iamvijaydev/react-base-code/archive/v1.1.1.zip)
-- *tar.gz:* [v1.1.1.tar.gz](https://github.com/iamvijaydev/react-base-code/archive/v1.1.1.tar.gz)
+- *zip:* [v1.2.0.zip](https://github.com/iamvijaydev/react-base-code/archive/v1.2.0.zip)
+- *tar.gz:* [v1.2.0.tar.gz](https://github.com/iamvijaydev/react-base-code/archive/v1.2.0.tar.gz)
 
 ## Install packages
 ```shell
