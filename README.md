@@ -12,7 +12,7 @@ An opinionated and scalable base tech stack for a modern React app.
 - **react-router-dom:** The routing library
 - **react-loadable:** The lazy loading library
 - **axios:** The XHR library
-- **react-intl-universal:** The XHR library
+- **react-intl-universal:** The internationalization library
 - **jest & enzyme:** The testing libraries
 
 ## Code structure
