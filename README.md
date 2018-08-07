@@ -59,3 +59,6 @@ npm run test:u
 
 ## Intl
 All the language translations are added to `/config/locale/<locale code>/<fragments>.json`. During both dev and prod build, an additional script is run to aggregate all the fragments to a single file at `/config/locale/<locale code>.json`. Meaning, you can create as many fragments as you like. Make sure to apply any modifications or additions are applied on all locale folders. Since aggregation is a separate script, you need to restart the dev server to apply the new changes.
+
+## TODO
+[TODO.md](https://github.com/iamvijaydev/react-base-code/blob/master/TODO.md)
