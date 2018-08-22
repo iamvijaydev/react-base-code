@@ -17,7 +17,7 @@ export default class DemoModal extends React.Component {
   }
 
   onHideModal = () => {
-    this.setState({ showModal: true });
+    this.setState({ showModal: false });
   }
 
   renderModal = () => (

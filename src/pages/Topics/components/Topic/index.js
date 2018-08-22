@@ -6,7 +6,7 @@ const Topic = ({ topics, match }) => {
 
   return (
     <div>
-      <h3>{found.topic || ''}</h3>
+      <h5>{found.topic || ''}</h5>
     </div>
   );
 };

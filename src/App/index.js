@@ -89,14 +89,14 @@ class App extends React.Component {
           <hr />
 
           <DemoSwitchThemeLocale
-            heading={intl.get('app/switch_theme').d('Switch Theme')}
+            heading={intl.get('app/switch_theme').d('Switch theme')}
             data={themes.data}
             selectedId={themes.selected.id}
             onChange={changeTheme}
           />
           <hr />
           <DemoSwitchThemeLocale
-            heading={intl.get('app/switch_language').d('Switch Language')}
+            heading={intl.get('app/switch_language').d('Switch language')}
             data={locale.data}
             selectedId={locale.selected.id}
             onChange={this.loadLocale}

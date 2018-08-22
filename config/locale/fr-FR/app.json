@@ -5,8 +5,9 @@
   "app/modal_heading": "Exemple modal (via React Portal)",
   "app/open_modal": "Ouvrir modal",
   "app/switch_theme": "Changer de thème",
-  "app/switch_language": "Changer de langue",
+  "app/switch_locale": "Changer de langue",
   "app/images_ref": "Images référencées depuis:",
   "app/select_topic": "Veuillez sélectionner un sujet",
-  "app/no_match": "Aucune correspondance pour"
+  "app/no_match": "Aucune correspondance pour",
+  "app/routing": "Le routage"
 }

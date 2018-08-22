@@ -8,7 +8,7 @@ import Default from './components/Default';
 
 const TopicsComp = ({ topics, match }) => (
   <div>
-    <h2>{intl.get('menu/topics').d('Topics')}</h2>
+    <h4>{intl.get('menu/topics').d('Topics')}</h4>
     <ul>
       {
         topics.map(({
