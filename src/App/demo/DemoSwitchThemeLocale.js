@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import props from 'lodash/fp/props';
 import compose from 'lodash/fp/compose';
 import map from 'lodash/fp/map';
+import curry from 'lodash/fp/curry';
 
 const DemoSwitchThemeLocale = ({
   heading,
@@ -13,17 +14,17 @@ const DemoSwitchThemeLocale = ({
   const getProps = props(['id', 'name']);
 
   // eslint-disable-next-line react/prop-types
-  const listItem = (({ 0: id, 1: name }) => (
+  const listItem = curry(((selected, { 0: id, 1: name }) => (
     <li key={id}>
       <button
-        disabled={id === selectedId}
+        disabled={id === selected}
         onClick={() => onChange(id)}
       >
         {name}
       </button>
     </li>
-  ));
-  const getList = map(compose(listItem, getProps));
+  )));
+  const getList = map(compose(listItem(selectedId), getProps));
 
   return (
     <div>
