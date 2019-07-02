@@ -1,5 +1,6 @@
 const webpackMerge = require('webpack-merge');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+// const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const buildValidations = require('./build/webpack/buildValidations.js');
 const commonConfig = require('./build/webpack/webpack.common.js');
@@ -22,7 +23,7 @@ module.exports = env => {
     envConfig,
     {
       plugins: [
-        new CleanWebpackPlugin(['dist']),
+        new CleanWebpackPlugin({ verbose: true }),
       ]
     }
   );

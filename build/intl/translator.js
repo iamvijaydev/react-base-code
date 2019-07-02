@@ -1,7 +1,7 @@
 /* eslint-disable */
-import * as fs from 'fs';
-import { sync as globSync } from 'glob';
-import { sync as mkdirpSync } from 'mkdirp';
+const fs = require('fs');
+const { sync: globSync } = require('glob');
+const { sync: mkdirpSync } = require('mkdirp');
 
 const outputLanguageDataDir = './config/locale/';
 
