@@ -1,4 +1,4 @@
-import themes from '../data/session';
+import themes from '../session';
 
 describe('session reducer', () => {
   it('should return the initial state', () => {

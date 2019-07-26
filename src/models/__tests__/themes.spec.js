@@ -1,4 +1,4 @@
-import themes, { initalState } from '../data/themes';
+import themes, { initalState } from '../themes';
 
 describe('theme reducer', () => {
   it('should return the initial state', () => {

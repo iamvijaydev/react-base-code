@@ -10,7 +10,7 @@
   "globals": {
     "env": true
   },
-  "extends": "airbnb",
+  "extends": ["airbnb", "prettier"],
   "rules": {
     "linebreak-style": "off",
     "import/prefer-default-export": "off",

@@ -1,4 +1,4 @@
-import locale, { initalState } from '../data/locale';
+import locale, { initalState } from '../locale';
 
 describe('locale reducer', () => {
   it('should return the initial state', () => {
