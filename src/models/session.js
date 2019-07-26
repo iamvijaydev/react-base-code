@@ -11,7 +11,7 @@ export const session = {
   state: initialState,
   reducers: {
     loginSuccess(state, payload) {
-      return { ...state, isLoggedIn: true, payload };
+      return { ...state, isLoggedIn: true, ...payload };
     },
     loginFail() {
       return { ...initialState };
@@ -23,10 +23,12 @@ export const session = {
   effects: dispatch => ({
     async onLogin(payload, rootState) {
       try {
-        const response = await new Promise(resolve => setTimeout(resolve, 1000));
-  
+        const response = await new Promise(resolve =>
+          setTimeout(() => resolve({ data: { token: '4sj5mdd2jj3smx' } }), 1000)
+        );
+
         dispatch.session.loginSuccess(response.data);
-      } catch(error) {
+      } catch (error) {
         dispatch.session.loginFail();
       }
     },

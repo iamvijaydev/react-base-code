@@ -1,21 +1,49 @@
-import themes, { initalState } from '../themes';
+import { init } from "@rematch/core";
+import { themes } from '../themes';
 
-describe('theme reducer', () => {
+let store;
+const initialState = {
+  data: [{
+    id: 'white_theme',
+    name: 'White',
+  }, {
+    id: 'dark_theme',
+    name: 'Dark',
+  }],
+  selected: {
+    id: 'white_theme',
+    name: 'White',
+  },
+}
+
+describe('locale model', () => {
+  beforeEach(() => {
+    store = init({
+      models: { themes }
+    });
+  });
+
   it('should return the initial state', () => {
-    expect(themes(undefined, {})).toBe(initalState);
+    expect(store.getState().themes).toStrictEqual(initialState);
   });
 
   it('should return with white theme selected', () => {
-    expect(themes(initalState, {
-      type: 'CHANGE_THEME',
-      id: 'white_theme',
-    }).selected.id).toBe('white_theme');
+    store.dispatch.themes.changeTheme({ id: 'white_theme' });
+    
+    expect(store.getState().themes.selected.id).toBe('white_theme');
   });
 
-  it('should return with black theme selected', () => {
-    expect(themes(initalState, {
-      type: 'CHANGE_THEME',
-      id: 'dark_theme',
-    }).selected.id).toBe('dark_theme');
+  it('should return with dark theme selected', () => {
+    store.dispatch.themes.changeTheme({ id: 'dark_theme' });
+    
+    expect(store.getState().themes.selected.id).toBe('dark_theme');
+  });
+
+  it('should not change when not allowed ids passed', () => {
+    const { id } = store.getState().themes.selected;
+
+    store.dispatch.themes.changeTheme({ id: 'random_theme' });
+    
+    expect(store.getState().themes.selected.id).toBe(id);
   });
 });

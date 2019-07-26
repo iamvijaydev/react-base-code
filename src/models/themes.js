@@ -18,8 +18,8 @@ export const themes = {
   reducers: {
     changeTheme(state, payload) {
       return {
-        data,
-        selected: data.find(({ id }) => id === payload.id) || selected,
+        ...state,
+        selected: data.find(({ id }) => id === payload.id) || state.selected,
       };
     },
   },

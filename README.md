@@ -7,7 +7,7 @@ An opinionated and scalable base tech stack for a modern React app.
 
 ## Tech Stack
 - **react:** The main UI library
-- **redux:** The main state management library
+- **rematch:** The main state management framework powered by Redux
 - **styled-components:** The styling and theming library
 - **react-router-dom:** The routing library
 - **react-loadable:** The lazy loading library

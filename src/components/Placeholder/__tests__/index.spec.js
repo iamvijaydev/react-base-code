@@ -28,6 +28,6 @@ describe('<Placeholder /> component', () => {
   });
 
   it('renders no actions by default', () => {
-    expect(wrapper.find(Styled.ActionBlock).get(0)).toBe(null);
+    expect(wrapper.find(Styled.ActionBlock).get(0)).toBe(undefined);
   });
 });
