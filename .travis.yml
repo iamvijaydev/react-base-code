@@ -1,10 +1,9 @@
 language: nodejs
 node_js:
   - "node"
-cache: yarn
 
 before_script:
-  - yarn run setup
+  - npm run setup
 
 script:
-  - yarn test
+  - npm test
