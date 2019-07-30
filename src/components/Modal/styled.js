@@ -1,4 +1,27 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const appear = keyframes`
+  from {
+    background-color: rgba(0,0,0,0);
+  }
+
+  to {
+    z-index: 100;
+    background-color: rgba(0,0,0,0.5);
+  }
+`;
+
+const appear1 = keyframes`
+  from {
+    z-index: -1;
+    background-color: rgba(0,0,0,0);
+  }
+
+  to {
+    z-index: 100;
+    background-color: rgba(0,0,0,0.5);
+  }
+`;
 
 const Styled = styled.div`
   display: flex;
@@ -10,8 +33,10 @@ const Styled = styled.div`
   top: 0;
   height: 100%;
   height: 100vh;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, opacity 0.3s ease;
   background-color: ${props => (props.showModal ? 'rgba(0,0,0,0.5)' : 'rgba(0,0,0,0)')};
+  opacity: ${props => (props.showModal ? 1 : 0)};
+  z-index: ${props => (props.showModal ? 100 : -100)};
 `;
 
 const Modal = styled.div`

@@ -1,19 +1,16 @@
 import React, { useEffect, useCallback } from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import intl from 'react-intl-universal';
+import { BrowserRouter as Router } from 'react-router-dom';
 
 import whitetheme from '../../config/theme/whitetheme';
 import darktheme from '../../config/theme/darktheme';
 import AppGlobalStyles from './AppGlobalStyles';
 import AppScrollToTop from './AppScrollToTop';
 import AppRoutes from './AppRoutes';
-import DemoLinks from './demo/DemoLinks';
-import DemoSwitchThemeLocale from './demo/DemoSwitchThemeLocale';
-import DemoModal from './demo/DemoModal';
-import DemoStaticAssets from './demo/DemoStaticAssets';
+import DemoToBeDeleted from './DemoToBeDeleted';
 
 const App = ({ themes, changeTheme, locale, changeLocale }) => {
   const loadLocale = useCallback(
@@ -61,13 +58,6 @@ const App = ({ themes, changeTheme, locale, changeLocale }) => {
     loadLocale();
   }, [loadLocale]);
 
-  const loadTheme = useCallback(
-    id => {
-      changeTheme({ id });
-    },
-    [changeTheme]
-  );
-
   const getTheme = useCallback(() => {
     let theme = {};
 
@@ -87,32 +77,10 @@ const App = ({ themes, changeTheme, locale, changeLocale }) => {
       <div>
         <AppGlobalStyles theme={theme} />
         <AppScrollToTop />
-
         <Router>
-          <div>
-            <DemoLinks />
-            <AppRoutes />
-          </div>
+          <AppRoutes />
+          <DemoToBeDeleted />
         </Router>
-        <hr />
-
-        <DemoSwitchThemeLocale
-          heading={intl.get('app/switch_theme').d('Switch theme')}
-          data={themes.data}
-          selectedId={themes.selected.id}
-          onChange={loadTheme}
-        />
-        <hr />
-        <DemoSwitchThemeLocale
-          heading={intl.get('app/switch_language').d('Switch language')}
-          data={locale.data}
-          selectedId={locale.selected.id}
-          onChange={loadLocale}
-        />
-        <hr />
-        <DemoModal />
-        <hr />
-        <DemoStaticAssets />
       </div>
     </ThemeProvider>
   );
