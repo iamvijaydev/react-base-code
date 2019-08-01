@@ -40,9 +40,9 @@ const whitetheme = {
   alternativeFont: fonts.mono,
 
   /* font weights */
-  bold: 700,
-  medium: 400,
-  light: 100,
+  bold: fonts.bold,
+  medium: fonts.medium,
+  light: fonts.light,
 };
 
 export { whitetheme as default };
