@@ -1,7 +1,7 @@
 const fonts = {
-  sans: '\'Open Sans\', sans-serif',
-  serif: '\'Slabo 27px\', serif',
-  mono: '\'Roboto Mono\', monospace',
+  sans: '\'PT Sans\', sans-serif',
+  serif: '\'PT Serif\', serif',
+  mono: 'monospace',
   bold: 700,
   medium: 400,
   light: 100,

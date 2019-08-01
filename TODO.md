@@ -6,8 +6,7 @@
 - [*] Add Rematch the Redux framework
 - [*] Add Redux dev tools
 - [*] Add Prettier
-- [ ] Add a new section for layouts
-- [ ] Proper demo components with styles that can be removed quickly
+- [*] Proper demo components with styles that can be removed quickly
 - [ ] Create a protected route component
 - [ ] Add new component for showing the notifications
 - [ ] Add table component that can recive data like these `<Table header={object[]} body={any[][]} minWidth={number} />`

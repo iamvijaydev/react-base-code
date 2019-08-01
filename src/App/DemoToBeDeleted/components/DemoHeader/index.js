@@ -7,7 +7,7 @@ const DemoHeader = () => (
   <Styled>
     <Styled.Heading>React Base Code</Styled.Heading>
     <div>
-      <Styled.Link href="https://github.com/iamvijaydev/react-base-code">
+      <Styled.Link target="_blank" href="https://github.com/iamvijaydev/react-base-code">
         Github
       </Styled.Link>
     </div>
