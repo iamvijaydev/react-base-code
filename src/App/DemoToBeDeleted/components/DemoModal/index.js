@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import intl from 'react-intl-universal';
 
 import Modal from '../../../../components/Modal'
+import { ListItem, ListSubItem } from '../../styled';
 
 const DemoModal = () => {
   const [show, setShow] = useState(false);
@@ -12,14 +13,14 @@ const DemoModal = () => {
 
   return (
     <>
-      <li>
+      <ListItem>
         {intl.get('app/modal_heading').d('Modal example (via React Portal)')}
-      </li>
-      <li>
+      </ListItem>
+      <ListSubItem>
         <button type="button" disabled={show} onClick={showModal}>
           {intl.get('app/open_modal').d('Open modal')}
         </button>
-      </li>
+      </ListSubItem>
       <Modal show={show} onClose={hideModal}>
         <div>
           <header>

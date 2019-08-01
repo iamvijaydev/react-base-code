@@ -5,17 +5,18 @@ import DemoLinks from './components/DemoLinks';
 import DemoSwitchTheme from './components/DemoSwitchTheme';
 import DemoSwitchLocale from './components/DemoSwitchLocale';
 import DemoModal from './components/DemoModal';
+import Styled from './styled';
 
 const DemoToBeDeleted = () => (
-  <aside>
+  <Styled>
     <DemoHeader />
-    <ul>
+    <Styled.List>
       <DemoLinks />
       <DemoSwitchTheme />
       <DemoSwitchLocale />
       <DemoModal />
-    </ul>
-  </aside>
+    </Styled.List>
+  </Styled>
 );
 
 export default DemoToBeDeleted;

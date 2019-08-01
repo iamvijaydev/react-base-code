@@ -43,14 +43,14 @@ const App = ({ selectedTheme, selectedLocale, locale, changeLocale }) => {
 
   return (
     <ThemeProvider theme={theme}>
-      <div>
+      <main className="app-container">
         <AppGlobalStyles theme={theme} />
         <AppScrollToTop />
         <Router>
           <AppRoutes />
           <DemoToBeDeleted />
         </Router>
-      </div>
+      </main>
     </ThemeProvider>
   );
 };

@@ -19,20 +19,20 @@ const darktheme = {
   textColor: colors.white,
 
   /* for UI elements */
-  primaryColor: colors.green,
-  secondaryColor: colors.yellow,
-  alternativeColor: colors.red,
+  primaryColor: colors.green500,
+  secondaryColor: colors.yellow500,
+  alternativeColor: colors.red500,
 
   /* status colors */
-  errorColor: colors.red,
-  successColor: colors.green,
-  notifColor: colors.green,
+  errorColor: colors.red500,
+  successColor: colors.green500,
+  notifColor: colors.green500,
   neutralColor: colors.gray200,
 
   /* link colors */
-  linkColor: colors.red,
-  linkActiveColor: colors.yellow,
-  linkVisitedColor: colors.green,
+  linkColor: colors.blue500,
+  linkActiveColor: colors.blue600,
+  linkVisitedColor: colors.indigo500,
 
   /* theme specific fonts */
   primaryFont: fonts.sans,

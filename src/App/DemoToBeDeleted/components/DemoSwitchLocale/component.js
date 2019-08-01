@@ -2,11 +2,13 @@ import React from 'react';
 import intl from 'react-intl-universal';
 import { arrayOf, shape, string, func } from 'prop-types';
 
+import { ListItem, ListSubItem } from '../../styled';
+
 const DemoSwitchLocale = ({ locale, selected, changeLocale }) => (
   <>
-    <li>{intl.get('app/switch_theme').d('Switch theme')}</li>
+    <ListItem>{intl.get('app/switch_theme').d('Switch theme')}</ListItem>
     {locale.map(({ id, name }) => (
-      <li key={id}>
+      <ListSubItem key={id}>
         <button
           type="button"
           disabled={id === selected}
@@ -14,7 +16,7 @@ const DemoSwitchLocale = ({ locale, selected, changeLocale }) => (
         >
           {name}
         </button>
-      </li>
+      </ListSubItem>
     ))}
   </>
 );

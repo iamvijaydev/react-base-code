@@ -10,15 +10,18 @@ const Base = styled.div`
 `;
 
 const Mask = styled(Base)`
-  background: rgba(0, 0, 0, 0.5);
-  z-index: ${props => props.theme.zindex.modalMask}
+  background: ${props =>
+    props.theme.backgroudColor === '#fff'
+      ? 'rgba(0, 0, 0, 0.5)'
+      : 'rgba(255, 255, 255, 0.5)'};
+  z-index: ${props => props.theme.zindex.modalMask};
 `;
 
 const ModalWrap = styled(Base)`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: ${props => props.theme.zindex.modal}
+  z-index: ${props => props.theme.zindex.modal};
 `;
 
 const Modal = styled.div`
@@ -53,4 +56,4 @@ export default {
   Mask,
   ModalWrap,
   Modal
-}
+};

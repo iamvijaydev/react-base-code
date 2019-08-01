@@ -1,13 +1,17 @@
 import React from 'react';
 import intl from 'react-intl-universal';
 
+import Styled from './styled';
+
 const DemoHeader = () => (
-  <>
-    <h1>React Base Code</h1>
+  <Styled>
+    <Styled.Heading>React Base Code</Styled.Heading>
     <div>
-      <a href="https://github.com/iamvijaydev/react-base-code">Github</a>
+      <Styled.Link href="https://github.com/iamvijaydev/react-base-code">
+        Github
+      </Styled.Link>
     </div>
-  </>
+  </Styled>
 );
 
 export default DemoHeader;
