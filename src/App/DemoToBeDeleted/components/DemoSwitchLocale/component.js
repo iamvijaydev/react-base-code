@@ -1,5 +1,6 @@
 import React from 'react';
 import intl from 'react-intl-universal';
+import { arrayOf, shape, string, func } from 'prop-types';
 
 const DemoSwitchLocale = ({ locale, selected, changeLocale }) => (
   <>
@@ -9,7 +10,7 @@ const DemoSwitchLocale = ({ locale, selected, changeLocale }) => (
         <button
           type="button"
           disabled={id === selected}
-          onClick={() => changeLocale({ id })}
+          onClick={() => changeLocale(id)}
         >
           {name}
         </button>
@@ -17,5 +18,11 @@ const DemoSwitchLocale = ({ locale, selected, changeLocale }) => (
     ))}
   </>
 );
+
+DemoSwitchLocale.propTypes = {
+  locale: arrayOf(shape({ id: string, name: string })).isRequired,
+  selected: string.isRequired,
+  changeLocale: func.isRequired
+};
 
 export default DemoSwitchLocale;

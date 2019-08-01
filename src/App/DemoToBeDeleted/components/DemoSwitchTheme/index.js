@@ -4,7 +4,7 @@ import DemoSwitchTheme from './component';
 
 const mapState = ({ themes }) => ({
   themes: themes.data,
-  selected: themes.selected,
+  selected: themes.selected.id,
 });
 
 const mapDispatch = ({ themes }) => ({

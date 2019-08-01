@@ -12,12 +12,12 @@ const AppRoutes = ({ show }) => {
   // untill some API fetch to complete
   if (show) {
     return (
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/about" component={About} />
-          <Route path="/topics" component={Topics} />
-          <Route component={Page404} />
-        </Switch>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/topics" component={Topics} />
+        <Route component={Page404} />
+      </Switch>
     );
   }
 

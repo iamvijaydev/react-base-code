@@ -4,7 +4,7 @@ import DemoSwitchLocale from './component';
 
 const mapState = ({ locale }) => ({
   locale: locale.data,
-  selected: locale.selected,
+  selected: locale.selected.id,
 });
 
 const mapDispatch = ({ locale }) => ({

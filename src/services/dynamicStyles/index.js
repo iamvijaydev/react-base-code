@@ -26,4 +26,4 @@ const dynamicStyles = (uid, styles) => {
   }
 };
 
-export { dynamicStyles as default };
+export default dynamicStyles;

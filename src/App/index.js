@@ -1,5 +1,5 @@
 import React, { useEffect, useCallback } from 'react';
-import PropTypes from 'prop-types';
+import { arrayOf, shape, string, func } from 'prop-types';
 import { connect } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import intl from 'react-intl-universal';
@@ -12,58 +12,27 @@ import AppScrollToTop from './AppScrollToTop';
 import AppRoutes from './AppRoutes';
 import DemoToBeDeleted from './DemoToBeDeleted';
 
-const App = ({ themes, changeTheme, locale, changeLocale }) => {
-  const loadLocale = useCallback(
-    userLocale => {
-      const hasLocale = check => locale.data.find(({ id }) => id === check);
+const App = ({ selectedTheme, selectedLocale, locale, changeLocale }) => {
 
-      if (!!userLocale && !hasLocale(userLocale)) {
-        return;
-      }
-
-      let currentLocale;
-
-      if (!!userLocale && hasLocale(userLocale)) {
-        currentLocale = userLocale;
-      } else {
-        currentLocale = intl.determineLocale({
-          cookieLocaleKey: 'lang'
-        });
-
-        if (!hasLocale(currentLocale)) {
-          currentLocale = 'en-US';
-        }
-      }
-
-      const onChangeLocale = () => {
-        changeLocale({ id: currentLocale });
-      };
-
-      import(`../../config/locale/${currentLocale}.json`)
-        .then(res =>
-          intl.init({
-            currentLocale,
-            locales: {
-              [currentLocale]: res
-            }
-          })
-        )
-        .then(onChangeLocale)
-        .catch(onChangeLocale);
-    },
-    [changeLocale]
-  );
-
+  // try and detect locale
+  // just once when the app loads
   useEffect(() => {
-    loadLocale();
-  }, [loadLocale]);
+    const currentLocale = intl.determineLocale({
+      cookieLocaleKey: 'lang'
+    });
+    const hasLocale = locale.find(({ id }) => id === currentLocale)
+
+    if (currentLocale !== selectedLocale && hasLocale) {
+      changeLocale(currentLocale);
+    }
+  }, [changeLocale]);
 
   const getTheme = useCallback(() => {
     let theme = {};
 
-    if (themes.selected.id === 'white_theme') {
+    if (selectedTheme === 'white_theme') {
       theme = whitetheme;
-    } else if (themes.selected.id === 'dark_theme') {
+    } else if (selectedTheme === 'dark_theme') {
       theme = darktheme;
     }
 
@@ -87,10 +56,10 @@ const App = ({ themes, changeTheme, locale, changeLocale }) => {
 };
 
 App.propTypes = {
-  themes: PropTypes.object.isRequired,
-  locale: PropTypes.object.isRequired,
-  changeTheme: PropTypes.func.isRequired,
-  changeLocale: PropTypes.func.isRequired
+  locale: arrayOf(shape({ id: string, name: string })).isRequired,
+  selectedLocale: string.isRequired,
+  selectedTheme: string.isRequired,
+  changeLocale: func.isRequired
 };
 
 /**
@@ -99,12 +68,12 @@ App.propTypes = {
  */
 
 const mapState = ({ themes, locale }) => ({
-  themes,
-  locale
+  locale: locale.data,
+  selectedLocale: locale.selected.id,
+  selectedTheme: themes.selected.id
 });
 
-const mapDispatch = ({ themes, locale }) => ({
-  changeTheme: themes.changeTheme,
+const mapDispatch = ({ locale }) => ({
   changeLocale: locale.changeLocale
 });
 
