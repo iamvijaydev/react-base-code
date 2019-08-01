@@ -3,6 +3,7 @@ import intl from 'react-intl-universal';
 
 import Modal from '../../../../components/Modal'
 import { ListItem, ListSubItem } from '../../styled';
+import { Header, Article, Footer } from './styled';
 
 const DemoModal = () => {
   const [show, setShow] = useState(false);
@@ -23,11 +24,10 @@ const DemoModal = () => {
       </ListSubItem>
       <Modal show={show} onClose={hideModal}>
         <div>
-          <header>
-            <h2>{intl.get('app/modal_header').d('Modal header')}</h2>
-          </header>
-          <hr />
-          <article>
+          <Header>
+            <h3>{intl.get('app/modal_header').d('Modal header')}</h3>
+          </Header>
+          <Article>
             <p>
               {intl
                 .get('app/modal_text_line_1')
@@ -38,13 +38,12 @@ const DemoModal = () => {
                 .getHTML('app/modal_text_line_2')
                 .d('<code>Esc</code> works too, if onClose is passed ;)')}
             </p>
-          </article>
-          <hr />
-          <footer>
+          </Article>
+          <Footer>
             <button type="button" onClick={hideModal}>
               {intl.get('common/close').d('Close')}
             </button>
-          </footer>
+          </Footer>
         </div>
       </Modal>
     </>

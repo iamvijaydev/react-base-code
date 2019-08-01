@@ -68,10 +68,10 @@ const Modal = ({ show, onClose, children }) => {
               item && (
                 <animated.div key={key} style={props}>
                   <Styled.ModalWrap>
-                    <Styled.Modal tabIndex="-1" role="dialog">
+                    <Styled.Modal role="dialog">
                       {onClose && (
                         <Styled.Modal.Close onClick={onClose}>
-                          (X)
+                          &#9932;
                         </Styled.Modal.Close>
                       )}
                       <Styled.Modal.Content>{children}</Styled.Modal.Content>

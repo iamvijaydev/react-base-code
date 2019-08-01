@@ -1,7 +1,7 @@
 {
   "app/modal_header": "Modal header",
   "app/modal_text_line_1": "This is an example of a modal!",
-  "app/modal_text_line_2": "<code>Esc</code> works too, if onClose is passed ;)",
+  "app/modal_text_line_2": "<code>Esc</code> works too, if `onClose` is passed &#9786;",
   "app/modal_heading": "Modal example (via React Portal)",
   "app/open_modal": "Open modal",
   "app/switch_theme": "Switch theme",

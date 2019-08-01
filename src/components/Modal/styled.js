@@ -27,13 +27,12 @@ const ModalWrap = styled(Base)`
 const Modal = styled.div`
   margin: 3rem;
   background: ${props => props.theme.colors.white};
-  color: ${props => props.theme.colors.gray900};
   border-radius: 4px;
-  padding: 3rem 1rem;
+  padding: 1rem;
   position: relative;
   box-shadow: 0 40px 77px rgba(0, 0, 0, 0.22), 0 27px 24px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
-  overflow-y: auto;
+  overflow: auto;
 
   @media (min-width: 768px) {
     max-height: 80%;
@@ -45,11 +44,11 @@ const Modal = styled.div`
 Modal.Close = styled.span`
   cursor: pointer;
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 1rem;
+  top: 0.8rem;
 `;
 Modal.Content = styled.div`
-  text-align: center;
+  overflow: auto;
 `;
 
 export default {

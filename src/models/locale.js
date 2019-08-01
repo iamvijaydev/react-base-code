@@ -18,11 +18,9 @@ const data = [
   }
 ];
 
-const selected = data[0];
-
 const initialState = {
   data,
-  selected
+  selected: { id: '' }
 };
 
 export const locale = {
@@ -37,7 +35,6 @@ export const locale = {
   },
   effects: dispatch => ({
     async changeLocale(currentLocale) {
-      console.log(currentLocale)
       await import(`../../config/locale/${currentLocale}.json`).then(res =>
         intl.init({
           currentLocale,

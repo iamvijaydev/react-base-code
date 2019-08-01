@@ -57,6 +57,10 @@ const GlobalStyles = ({ theme }) => {
         font-family: ${theme.secondaryFont}
       }
 
+      p {
+        margin: 0 0 1rem;
+      }
+
       ::-webkit-input-placeholder {
         color: ${theme.colors.gray400};
       }
