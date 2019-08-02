@@ -3,7 +3,7 @@ node_js:
   - "node"
 
 before_script:
-  - npm run setup
+  - yarn run setup
 
 script:
-  - npm test
+  - yarn test

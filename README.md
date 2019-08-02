@@ -1,8 +1,3 @@
-<dl>
-  <dt>Update</dt>
-  <dd>The next version is in the works. Check it out <a href="https://github.com/iamvijaydev/react-base-code/tree/next">next</a>. Read the <a href="https://github.com/iamvijaydev/react-base-code/blob/next/TODO.md">todo</a>.</dd>
-</dl>
-
 React base code
 ===============
 
@@ -16,6 +11,7 @@ An opinionated and scalable base tech stack for a modern React app.
 - **styled-components:** The styling and theming library
 - **react-router-dom:** The routing library
 - **react-loadable:** The lazy loading library
+- **react-spring:** The spring-physics based animation library
 - **axios:** The XHR library
 - **react-intl-universal:** The internationalization library
 - **jest & enzyme:** The testing libraries
@@ -32,12 +28,12 @@ An opinionated and scalable base tech stack for a modern React app.
 
 ## Get the code
 - *clone:* the repository via `git clone git@github.com:iamvijaydev/react-base-code.git` (You will have to change the remote)
-- *zip:* [v1.2.0.zip](https://github.com/iamvijaydev/react-base-code/archive/v1.2.0.zip)
-- *tar.gz:* [v1.2.0.tar.gz](https://github.com/iamvijaydev/react-base-code/archive/v1.2.0.tar.gz)
+- *zip:* [v1.2.0.zip](https://github.com/iamvijaydev/react-base-code/archive/v1.3.0.zip)
+- *tar.gz:* [v1.2.0.tar.gz](https://github.com/iamvijaydev/react-base-code/archive/v1.3.0.tar.gz)
 
 ## Install packages
 ```shell
-npm install
+yarn install
 ```
 
 ## Create env.js from env.example.js
@@ -45,26 +41,26 @@ This file `env.js` contains any environment-related contents. Update then as you
 
 ## Start dev server
 ```shell
-npm start
+yarn start
 ```
 
 ## Build dist
 ```shell
-npm run dist
+yarn run dist
 ```
 
 ## Unit test
 ```shell
-npm test
+yarn test
 ```
 
 ## Update unit test snapshots
 ```shell
-npm run test:u
+yarn test -u
 ```
 
 ## Intl
 All the language translations are added to `/config/locale/<locale code>/<fragments>.json`. During both dev and prod build, an additional script is run to aggregate all the fragments to a single file at `/config/locale/<locale code>.json`. Meaning, you can create as many fragments as you like. Make sure to apply any modifications or additions are applied on all locale folders. Since aggregation is a separate script, you need to restart the dev server to apply the new changes.
 
 ## TODO
-[TODO.md](https://github.com/iamvijaydev/react-base-code/blob/next/TODO.md)
+[TODO.md](https://github.com/iamvijaydev/react-base-code/blob/master/TODO.md)
