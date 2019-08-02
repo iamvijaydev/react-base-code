@@ -11,6 +11,7 @@ An opinionated and scalable base tech stack for a modern React app.
 - **styled-components:** The styling and theming library
 - **react-router-dom:** The routing library
 - **react-loadable:** The lazy loading library
+- **react-spring:** The spring-physics based animation library
 - **axios:** The XHR library
 - **react-intl-universal:** The internationalization library
 - **jest & enzyme:** The testing libraries
@@ -27,12 +28,12 @@ An opinionated and scalable base tech stack for a modern React app.
 
 ## Get the code
 - *clone:* the repository via `git clone git@github.com:iamvijaydev/react-base-code.git` (You will have to change the remote)
-- *zip:* [v1.2.0.zip](https://github.com/iamvijaydev/react-base-code/archive/v1.2.0.zip)
-- *tar.gz:* [v1.2.0.tar.gz](https://github.com/iamvijaydev/react-base-code/archive/v1.2.0.tar.gz)
+- *zip:* [v1.3.0.zip](https://github.com/iamvijaydev/react-base-code/archive/v1.3.0.zip)
+- *tar.gz:* [v1.3.0.tar.gz](https://github.com/iamvijaydev/react-base-code/archive/v1.3.0.tar.gz)
 
 ## Install packages
 ```shell
-npm install
+yarn install
 ```
 
 ## Create env.js from env.example.js
@@ -40,22 +41,22 @@ This file `env.js` contains any environment-related contents. Update then as you
 
 ## Start dev server
 ```shell
-npm start
+yarn start
 ```
 
 ## Build dist
 ```shell
-npm run dist
+yarn run dist
 ```
 
 ## Unit test
 ```shell
-npm test
+yarn test
 ```
 
 ## Update unit test snapshots
 ```shell
-npm run test:u
+yarn test -u
 ```
 
 ## Intl
