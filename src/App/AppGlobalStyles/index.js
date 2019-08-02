@@ -1,7 +1,7 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { shape } from 'prop-types';
 
-import dynamicStyles from '../../services/dynamicStyles';
+import dynamicStyles from 'Services/dynamicStyles';
 
 const GlobalStyles = ({ theme }) => {
   useEffect(() => {

@@ -22,5 +22,18 @@
       "aspects": ["noHref", "invalidHref", "preferButton"]
     }],
     "react/sort-comp": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "alias": {
+        "map": [
+          ["Components", "./src/components/"],
+          ["Pages", "./src/pages/"],
+          ["Models", "./src/models/"],
+          ["Services", "./src/services/"],
+          ["Config", "./config/"]
+        ],
+      }
+    }
   }
 }

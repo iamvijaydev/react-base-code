@@ -2,10 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Switch, Route } from 'react-router-dom';
 
-import Home from '../../pages/Home';
-import About from '../../pages/About';
-import Topics from '../../pages/Topics';
-import Page404 from '../../pages/Page404';
+import Home from 'Pages/Home';
+import About from 'Pages/About';
+import Topics from 'Pages/Topics';
+import Page404 from 'Pages/Page404';
 
 const AppRoutes = ({ show }) => {
   // in case if we want to hold off rendering routes

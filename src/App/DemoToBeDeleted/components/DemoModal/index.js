@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import intl from 'react-intl-universal';
 
-import Modal from '../../../../components/Modal'
+import Modal from 'Components/Modal'
 import { ListItem, ListSubItem } from '../../styled';
 import { Header, Article, Footer } from './styled';
 
