@@ -45,4 +45,4 @@ const whitetheme = {
   light: fonts.light,
 };
 
-export { whitetheme as default };
+export default whitetheme;

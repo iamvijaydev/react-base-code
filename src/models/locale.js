@@ -34,17 +34,21 @@ export const locale = {
     }
   },
   effects: dispatch => ({
-    async changeLocale(currentLocale) {
-      await import(`../../config/locale/${currentLocale}.json`).then(res =>
-        intl.init({
-          currentLocale,
-          locales: {
-            [currentLocale]: res
-          }
-        })
-      );
+    async changeLocale(currentLocale, state) {
+      const hasLocale = state.locale.data.find(({ id }) => id === currentLocale);
 
-      dispatch.locale.updateLocale(currentLocale);
+      if (hasLocale) {
+        await import(`Config/locale/${currentLocale}.json`).then(res =>
+          intl.init({
+            currentLocale,
+            locales: {
+              [currentLocale]: res
+            }
+          })
+        );
+
+        dispatch.locale.updateLocale(currentLocale);
+      }
     }
   })
 };

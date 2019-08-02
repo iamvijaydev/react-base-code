@@ -17,9 +17,7 @@ const initialState = {
     name: 'Japanese',
   }],
   selected: {
-    id: 'en-US',
-    value: 'en-US',
-    name: 'English',
+    id: '',
   },
 }
 
@@ -34,28 +32,28 @@ describe('locale model', () => {
     expect(store.getState().locale).toStrictEqual(initialState);
   });
 
-  it('should return with en-US selected', () => {
-    store.dispatch.locale.changeLocale({ id: 'en-US' });
+  it('should return with en-US selected', async () => {
+    await store.dispatch.locale.changeLocale('en-US');
     
     expect(store.getState().locale.selected.id).toBe('en-US');
   });
 
-  it('should return with fr-FR selected', () => {
-    store.dispatch.locale.changeLocale({ id: 'fr-FR' });
+  it('should return with fr-FR selected', async () => {
+    await store.dispatch.locale.changeLocale('fr-FR');
     
     expect(store.getState().locale.selected.id).toBe('fr-FR');
   });
 
-  it('should return with ja-JP selected', () => {
-    store.dispatch.locale.changeLocale({ id: 'ja-JP' });
+  it('should return with ja-JP selected', async () => {
+    await store.dispatch.locale.changeLocale('ja-JP');
     
     expect(store.getState().locale.selected.id).toBe('ja-JP');
   });
 
-  it('should not change when not allowed ids passed', () => {
+  it('should not change when not allowed ids passed', async () => {
     const { id } = store.getState().locale.selected;
 
-    store.dispatch.locale.changeLocale({ id: 'ran-RANDOM' });
+    await store.dispatch.locale.changeLocale('ran-RANDOM');
     
     expect(store.getState().locale.selected.id).toBe(id);
   });

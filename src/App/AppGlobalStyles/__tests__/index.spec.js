@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 
 import GlobalStyles from '../index';
-import whitetheme from '../../../../config/theme/whitetheme';
+import whitetheme from 'Config/theme/whitetheme';
 
 describe('<GlobalStyles /> component', () => {
   let wrapper;
@@ -25,9 +25,5 @@ describe('<GlobalStyles /> component', () => {
 
   it('should render nothing', () => {
     expect(wrapper.get(0)).toBe(null);
-  });
-
-  it('should inject styles', () => {
-    expect(document.getElementById('GLOBAL_STYLES').innerHTML).not.toHaveLength(0);
   });
 });
