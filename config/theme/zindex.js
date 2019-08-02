@@ -1,6 +1,6 @@
 const zindex = {
-  modalx: 99,
-  modal: 98,
+  modal: 99,
+  modalMask: 98,
   tooltip: 97,
   dropdown: 96,
   notif: 95,

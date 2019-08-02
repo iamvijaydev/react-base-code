@@ -1,83 +1,98 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import { useEffect } from 'react';
+import { shape } from 'prop-types';
 
-import dynamicStyles from '../../services/dynamicStyles';
+import dynamicStyles from 'Services/dynamicStyles';
 
-export default class GlobalStyles extends React.Component {
-  static getStyles = theme => `
-    html {
-      font-size: 62.5%;
-    }
-    
-    body {
-      font-family: ${theme.primaryFont};
-      font-size: 1.6rem;
-      margin: 0;
-      padding: 0;
-      background: ${theme.backgroudColor};
-      color: ${theme.textColor};
-    }
+const GlobalStyles = ({ theme }) => {
+  useEffect(() => {
+    const styles = `
+      html {
+        font-size: 62.5%;
+      }
+      
+      body {
+        font-family: ${theme.primaryFont};
+        font-size: 1.6rem;
+        margin: 0;
+        padding: 0;
+        background: ${theme.backgroudColor};
+        color: ${theme.textColor};
+      }
 
-    a {
-      color: ${theme.linkColor};
-      text-decoration: underline;
-    }
+      html,
+      body,
+      #root {
+        width: 100%;
+        height: 100%;
+      }
 
-    a:visited {
-      color: ${theme.linkVisitedColor};
-    }
+      a {
+        color: ${theme.linkColor};
+        text-decoration: underline;
+      }
 
-    a:hover,
-    a:active {
-      color: ${theme.linkActiveColor};
-    }
+      a:visited {
+        color: ${theme.linkVisitedColor};
+      }
 
-    input[type=number]::-webkit-inner-spin-button, 
-    input[type=number]::-webkit-outer-spin-button { 
-      -webkit-appearance: none;
-      -moz-appearance: none;
-      appearance: none;
-      margin: 0;
-    }
+      a:hover,
+      a:active {
+        color: ${theme.linkActiveColor};
+      }
 
-    ::-webkit-input-placeholder {
-      color: ${theme.colors.gray200};
-    }
-    ::-moz-placeholder {
-      color: ${theme.colors.gray200};
-    }
-    :-ms-input-placeholder {
-      color: ${theme.colors.gray200};
-    }
-    :-moz-placeholder {
-      color: ${theme.colors.gray200};
-    }
+      input[type=number]::-webkit-inner-spin-button, 
+      input[type=number]::-webkit-outer-spin-button { 
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        margin: 0;
+      }
 
-    #modal-root {
-      position: relative;
-      z-index: ${theme.zindex.modalx};
-    }
-  `;
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: ${theme.secondaryFont}
+      }
 
-  constructor(props) {
-    super(props);
+      p {
+        margin: 0 0 1rem;
+      }
 
-    this.styleId = 'GLOBAL_STYLES';
-  }
+      ::-webkit-input-placeholder {
+        color: ${theme.colors.grey400};
+      }
+      ::-moz-placeholder {
+        color: ${theme.colors.grey400};
+      }
+      :-ms-input-placeholder {
+        color: ${theme.colors.grey400};
+      }
+      :-moz-placeholder {
+        color: ${theme.colors.grey400};
+      }
 
-  componentWillMount() {
-    dynamicStyles(this.styleId, GlobalStyles.getStyles(this.props.theme));
-  }
+      #modal-root {
+        position: relative;
+        z-index: ${theme.zindex.modalx};
+      }
 
-  componentDidUpdate() {
-    dynamicStyles(this.styleId, GlobalStyles.getStyles(this.props.theme));
-  }
+      .app-container > div {
+        margin: 0 0 0 30rem;
+        padding: 2rem;
+      }
+    `;
 
-  render() {
-    return null;
-  }
-}
+    dynamicStyles('GLOBAL_STYLES', styles);
+  }, [theme]);
+
+  return null;
+};
 
 GlobalStyles.propTypes = {
-  theme: PropTypes.object.isRequired,
+  theme: shape({}).isRequired
 };
+
+export default GlobalStyles;

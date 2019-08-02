@@ -12,7 +12,7 @@ An opinionated and scalable base tech stack for a modern React app.
 
 ## Tech Stack
 - **react:** The main UI library
-- **redux:** The main state management library
+- **rematch:** The main state management framework powered by Redux
 - **styled-components:** The styling and theming library
 - **react-router-dom:** The routing library
 - **react-loadable:** The lazy loading library
@@ -26,7 +26,8 @@ An opinionated and scalable base tech stack for a modern React app.
 - **/src/components:** Shareable components that never connects to redux store
 - **/src/pages:** Individual route pages
 - **/src/services:** Wrapped services for the App, e.g: fetch, validation. Available as an API, so the actual implementation can change
-- **/src/store:** Redux store
+- **/src/store:** Rematch redux store
+- **/src/models:** Rematch shared models
 - **/dist:** Complied code ready to deployed
 
 ## Get the code

@@ -1,5 +1,6 @@
 const webpack = require('webpack');
 const WriteFilePlugin = require('write-file-webpack-plugin');
+const ErrorOverlayPlugin = require('error-overlay-webpack-plugin')
 const commonPaths = require('./commonPaths');
 
 module.exports = {
@@ -10,7 +11,7 @@ module.exports = {
   output: {
     filename: '[name].[hash].js'
   },
-  devtool: 'cheap-eval-source-map',
+  devtool: 'cheap-module-source-map',
   devServer: {
     host: 'localhost',
     port: process.env.PORT || 8080,
@@ -20,6 +21,7 @@ module.exports = {
     publicPath: '/',
   },
   plugins: [
+    new ErrorOverlayPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new WriteFilePlugin(),
   ]

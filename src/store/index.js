@@ -1,13 +1,13 @@
-import { createStore } from 'redux';
+import { init } from '@rematch/core';
+import createLoadingPlugin from '@rematch/loading'
 
-import rootreducer from './rootreducer';
+import * as models from './models';
 
-export default createStore(rootreducer);
+const loading = createLoadingPlugin({});
 
-/**
- * This is just the basic redux config to show the various parts
- * Add proper middlewares and initial states for production code.
- *
- * Please use rematch (Redux framework) to avoid creating these files:
- * https://github.com/rematch/rematch
- */
+const store = init({
+  models,
+  plugins: [loading]
+});
+
+export default store;
