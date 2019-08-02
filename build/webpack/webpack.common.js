@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BaseHrefWebpackPlugin } = require('base-href-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const baseHref = '/';
 
@@ -41,8 +40,7 @@ module.exports = {
         force: true,
         flatten: true
       }
-    ),
-    new CleanWebpackPlugin()
+    )
   ],
   optimization: {
     moduleIds: 'hashed',
@@ -63,7 +61,7 @@ module.exports = {
       Pages: path.resolve(__dirname, '../../src/pages/'),
       Models: path.resolve(__dirname, '../../src/models/'),
       Services: path.resolve(__dirname, '../../src/services/'),
-      Config: path.resolve(__dirname, '../../config/'),
+      Config: path.resolve(__dirname, '../../config/')
     }
   },
   node: {

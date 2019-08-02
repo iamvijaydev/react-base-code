@@ -1,3 +1,4 @@
+const path = require('path');
 const webpack = require('webpack');
 const WriteFilePlugin = require('write-file-webpack-plugin');
 const ErrorOverlayPlugin = require('error-overlay-webpack-plugin')
@@ -9,6 +10,7 @@ module.exports = {
     app: `${commonPaths.appEntry}/index.js`
   },
   output: {
+    path: path.resolve(__dirname, 'dist'),
     filename: '[name].[hash].js'
   },
   devtool: 'cheap-module-source-map',

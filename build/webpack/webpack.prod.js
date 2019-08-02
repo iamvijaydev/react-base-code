@@ -1,4 +1,4 @@
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const path = require('path');
 const commonPaths = require('./commonPaths');
 
 module.exports = {
@@ -7,13 +7,9 @@ module.exports = {
     app: [`${commonPaths.appEntry}/index.js`],
   },
   output: {
+    path: path.resolve(__dirname, 'dist'),
     filename: '[name].[hash].js',
     crossOriginLoading: 'anonymous',
   },
   devtool: 'source-map',
-  plugins: [
-    new UglifyJSPlugin({
-      sourceMap: true,
-    }),
-  ],
 };
