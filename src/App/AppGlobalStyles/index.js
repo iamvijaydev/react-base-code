@@ -62,16 +62,16 @@ const GlobalStyles = ({ theme }) => {
       }
 
       ::-webkit-input-placeholder {
-        color: ${theme.colors.gray400};
+        color: ${theme.colors.grey400};
       }
       ::-moz-placeholder {
-        color: ${theme.colors.gray400};
+        color: ${theme.colors.grey400};
       }
       :-ms-input-placeholder {
-        color: ${theme.colors.gray400};
+        color: ${theme.colors.grey400};
       }
       :-moz-placeholder {
-        color: ${theme.colors.gray400};
+        color: ${theme.colors.grey400};
       }
 
       #modal-root {

@@ -16,7 +16,7 @@ const whitetheme = {
 
   /* dark theme */
   backgroudColor: colors.white,
-  textColor: colors.gray900,
+  textColor: colors.grey900,
 
   /* for UI elements */
   primaryColor: colors.green500,
@@ -27,7 +27,7 @@ const whitetheme = {
   errorColor: colors.red500,
   successColor: colors.green500,
   notifColor: colors.green500,
-  neutralColor: colors.gray200,
+  neutralColor: colors.grey200,
 
   /* link colors */
   linkColor: colors.blue500,

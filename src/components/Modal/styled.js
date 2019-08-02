@@ -27,6 +27,7 @@ const ModalWrap = styled(Base)`
 const Modal = styled.div`
   margin: 3rem;
   background: ${props => props.theme.colors.white};
+  color: ${props => props.theme.colors.grey900};
   border-radius: 4px;
   padding: 1rem;
   position: relative;

@@ -27,7 +27,7 @@ const darktheme = {
   errorColor: colors.red500,
   successColor: colors.green500,
   notifColor: colors.green500,
-  neutralColor: colors.gray200,
+  neutralColor: colors.grey200,
 
   /* link colors */
   linkColor: colors.blue500,
